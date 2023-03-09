@@ -11,23 +11,23 @@
 ## V4 支援指令
 
 * R-type
-	* ADD     RD=RS+RT
-	* SUB     RD=RS-RT
-	* AND     RD=RS&&RT
-	* OR      RS=RS||RT
-	* SLT     RD=(RS<RT)?1:0
-	* DSLLV   RD=RT<<RS
+	* ***ADD***     RD=RS+RT
+	* ***SUB***     RD=RS-RT
+	* ***AND***     RD=RS&&RT
+	* ***OR***      RS=RS||RT
+	* ***SLT***     RD=(RS<RT)?1:0
+	* ***DSLLV***   RD=RT<<RS
          
 * I-type
-	* ADDI    RT=RS+CONSTANT
-	* LW      RT=D_MEMORY[RS+ADDR]
-	* SW      D_MEMORY[RS+ADDR]=RT
+	* ***ADDI***    RT=RS+CONSTANT
+	* ***LW***      RT=D_MEMORY[RS+ADDR]
+	* ***SW***      D_MEMORY[RS+ADDR]=RT
          
 * Branch-tpye
-	* beq     pc=(RS==RT)?pc+1+CONSTANT:pc+1
+	* ***beq***     pc=(RS==RT)?pc+1+CONSTANT:pc+1
        
 * Jump-type
-	* J       pc={pc[31:28], 2'b00, ins[25:0]} or  pc={pc[31:28], ins[25:0]<<2}
+	* ***J***       pc={pc[31:28], 2'b00, ins[25:0]} or  pc={pc[31:28], ins[25:0]<<2}
 
 ## 各個machine code的執行時間(cycle)
                                 V1             V2                 V3               V4              V5
