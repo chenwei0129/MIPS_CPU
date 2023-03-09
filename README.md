@@ -8,7 +8,7 @@
 * V4 : 新增指令jump
 * V5 : 到D_memory(RAM)讀值以及寫值有延遲，延遲時間在def.v中設定(RAM_DELAY)
 
-## V4支援指令
+## V4 支援指令
 
 * R-type
 	* ADD     RD=RS+RT
@@ -40,7 +40,7 @@
      jump.s                  -----          -----(-)           -----(-)          20.5(-)       ------
      no_hazard.s             132.5          132.5(0)           132.5(0)         132.5(0)        132.5
 
-## 合成結果(V4)
+## V4 合成結果
 
 	process                180 nm
 	frequency           166.67 MHz
