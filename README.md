@@ -50,7 +50,7 @@ PS : The format of assembly code is something difference from typical MIPS forma
          
 * Branch-tpye\
 ***INS RS RT CONST(signed)***
-	* ***beq***     
+	* ***BEQ***     
 	
 			pc = (RS==RT)?pc + 1 + CONSTANT:pc + 1
        
