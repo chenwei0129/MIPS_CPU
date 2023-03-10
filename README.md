@@ -33,7 +33,7 @@ The assembly code prepared to be transfered to machine code is in the folder "as
 	
 			RD=RT<<RS
          
-* I-type  INS RS RT CONST
+* I-type  INS RS RT CONST(signed)
 	* ***ADDI***    
 	
 			RT=RS+CONSTANT
@@ -44,12 +44,12 @@ The assembly code prepared to be transfered to machine code is in the folder "as
 	
 			D_MEMORY[RS+ADDR]=RT
          
-* Branch-tpye INS RS RT CONST(signed)
+* Branch-tpye  INS RS RT CONST(signed)
 	* ***beq***     
 	
 			pc=(RS==RT)?pc+1+CONSTANT:pc+1
        
-* Jump-type
+* Jump-type  INS CONST
 	* ***J***       
 	
 			pc={pc[31:28], 2'b00, ins[25:0]} or  pc={pc[31:28], ins[25:0]<<2}
