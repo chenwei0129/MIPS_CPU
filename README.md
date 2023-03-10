@@ -1,13 +1,13 @@
 # MIPS CPU
 
-### There is an assembler to transfer assembly code to machine code.
-The assembly code prepared to be transfered to machine code is in the folder "assembly_code"
+### There is an assembler to transfer assembly code to machine code, and a CPU to execute these instruction.
+The assembly code prepared to be transfered to machine code is in the folder "assembly_code", and the machine code is the file "sisc.prog".
 
 ## Introduction of each version
 
-* V1 : according to the typical MIPS architecture.
-* V2 : move the output of forwarding unit and the two MUXs from EX to ID, reducing the probability of branch hazard.
-* V3 : When execute branch，predict "taken", rather than "NOT taken", reducing the penalty.
+* V1 : According to the typical MIPS architecture.
+* V2 : Move the output of the forwarding unit and the two MUXs from EX to ID, reducing the probability of branch hazard.
+* V3 : When execute branch, predict "taken", rather than "NOT taken", reducing the penalty.
 * V4 : Add new instruction "jump".
 * V5 : Simulate the delay of D_memory(RAM), the delay cycle(RAM_DELAY) is defined in def.v.
 
@@ -16,43 +16,44 @@ The assembly code prepared to be transfered to machine code is in the folder "as
 * R-type  INS RS RT RD
 	* ***ADD***     
 	
-			RD=RS+RT
+			RD = RS + RT
 	* ***SUB***     
 	
-			RD=RS-RT
+			RD = RS - RT
 	* ***AND***     
 	
-			RD=RS&&RT
+			RD = RS && RT
 	* ***OR***      
 	
-			RS=RS||RT
+			RS = RS || RT
 	* ***SLT***     
 	
-			RD=(RS<RT)?1:0
+			RD = (RS<RT)?1:0
 	* ***DSLLV***   
 	
-			RD=RT<<RS
+			RD = RT << RS
          
 * I-type  INS RS RT CONST(signed)
 	* ***ADDI***    
 	
-			RT=RS+CONSTANT
+			RT = RS + CONSTANT
 	* ***LW***      
 	
-			RT=D_MEMORY[RS+ADDR]
+			RT = D_MEMORY[RS+ADDR]
 	* ***SW***      
 	
-			D_MEMORY[RS+ADDR]=RT
+			D_MEMORY[RS+ADDR] = RT
          
 * Branch-tpye  INS RS RT CONST(signed)
 	* ***beq***     
 	
-			pc=(RS==RT)?pc+1+CONSTANT:pc+1
+			pc = (RS==RT)?pc + 1 + CONSTANT:pc + 1
        
 * Jump-type  INS CONST
 	* ***J***       
 	
-			pc={pc[31:28], 2'b00, ins[25:0]} or  pc={pc[31:28], ins[25:0]<<2}
+			1. pc = {pc[31:28], 2'b00, ins[25:0]}
+			2. pc = {pc[31:28], ins[25:0]<<2}
 
 ## The latency of machine code(cycle)
                                 V1             V2                 V3               V4              V5
