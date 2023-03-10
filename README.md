@@ -3,6 +3,8 @@
 ### There is an assembler to transfer assembly code to machine code, and a CPU to execute these instruction.
 The assembly code prepared to be transfered to machine code is in the folder "assembly_code", and the machine code is the file "sisc.prog".
 
+PS : The format of assembly code is something difference from typical MIPS format.
+
 ## Introduction of each version
 
 * V1 : According to the typical MIPS architecture.
