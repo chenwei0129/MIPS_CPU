@@ -13,7 +13,8 @@ The assembly code prepared to be transfered to machine code is in the folder "as
 
 ## The instruction supported by V4
 
-* R-type    ***INS RS RT RD***
+* R-type\
+***INS RS RT RD***
 	* ***ADD***     
 	
 			RD = RS + RT
@@ -33,7 +34,8 @@ The assembly code prepared to be transfered to machine code is in the folder "as
 	
 			RD = RT << RS
          
-* I-type    ***INS RS RT CONST(signed)***
+* I-type\
+***INS RS RT CONST(signed)***
 	* ***ADDI***    
 	
 			RT = RS + CONSTANT
@@ -44,12 +46,14 @@ The assembly code prepared to be transfered to machine code is in the folder "as
 	
 			D_MEMORY[RS+ADDR] = RT
          
-* Branch-tpye    ***INS RS RT CONST(signed)***
+* Branch-tpye\
+***INS RS RT CONST(signed)***
 	* ***beq***     
 	
 			pc = (RS==RT)?pc + 1 + CONSTANT:pc + 1
        
-* Jump-type     ***INS CONST***
+* Jump-type\
+***INS CONST***
 	* ***J***       
 	
 			1. pc = {pc[31:28], 2'b00, ins[25:0]}
